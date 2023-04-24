@@ -9,17 +9,6 @@
     "footer";
 }
 
-.forms{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 50px 5vh auto 30px;
-    grid-template-areas: 
-    "header"
-    "nav"
-    "main"
-    "footer";
-}
-
 header{
     grid-area: header;
 }
@@ -59,6 +48,15 @@ main{
     grid-template-rows: auto;
 }
 
+main table, th, td{
+    border: solid black 1px;
+    border-collapse: collapse;
+}
+
+main table{
+    height: 45vh;
+}
+
 main img{
     display: none;
 }
@@ -70,11 +68,6 @@ footer{
 @media screen and (min-width: 800px){
     body{
         height: 95vh;
-    }
-
-    .forms{
-        width: 90%;
-        margin: 1em auto;
     }
 
     .wrapper{
@@ -107,13 +100,17 @@ footer{
         overflow: auto;
     }
 
+    .center main{
+        grid-template-columns: 1fr;
+    }
+
     main img{
         display: block;
         width: 75%;
         margin: auto;
     }
 
-    main > h2{
+    main h2{
         text-align: center;
     }
 
@@ -125,6 +122,11 @@ footer{
     main form{
         text-align: center;
         margin: 2vh auto;
+    }
+
+    main ul{
+        display: block;
+        text-align: center;
     }
 
     footer{
