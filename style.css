@@ -54,7 +54,7 @@ main table, th, td{
 }
 
 main table{
-    height: 45vh;
+    width: 50vw;
 }
 
 main img{
@@ -114,10 +114,10 @@ footer{
         text-align: center;
     }
 
-    main > section:nth-child(even){
+    /*main > section:nth-child(even){
         display: grid;
         grid-template-columns: 1fr 1fr;
-    }
+    }*/
 
     main form{
         text-align: center;
@@ -125,8 +125,22 @@ footer{
     }
 
     main ul{
-        display: block;
         text-align: center;
+        list-style-type: none;
+    }
+
+    main a{
+        font-size: 1.5em;
+    }
+
+    main table{
+        height: 45vh;
+        width: 25vw;
+        margin: 10% auto;
+    }
+
+    main thead{
+        font-size: 125%;
     }
 
     footer{
