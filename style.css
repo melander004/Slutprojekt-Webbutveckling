@@ -48,6 +48,11 @@ main{
     grid-template-rows: auto;
 }
 
+main ul{
+    padding: 0;
+    list-style-type: none;
+}
+
 main table, th, td{
     border: solid black 1px;
     border-collapse: collapse;
@@ -55,6 +60,26 @@ main table, th, td{
 
 main table{
     width: 50vw;
+}
+
+main table a{
+    text-decoration: none;
+}
+
+main table>thead{
+    font-size: 1.25em;
+}
+
+tbody>tr:nth-child(odd){
+    background-color: lightblue;
+}
+
+tbody>tr:nth-child(even){
+    background-color: rgb(180, 180, 180);
+}
+
+thead{
+    background-color: #6868ffcc;
 }
 
 main img{
@@ -81,14 +106,20 @@ footer{
         text-align: center;
     }
 
-    nav{
-        display: inline-block;
+    nav li a{
         vertical-align: middle;
     }
 
     nav > ul{
         grid-template-columns: 1fr 1fr 1fr;
         text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav > li{
+        margin: 0;
+        padding: 0;
     }
 
     nav a{
@@ -104,9 +135,14 @@ footer{
         grid-template-columns: 1fr;
     }
 
+    main.trespalt{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
     main img{
         display: block;
-        width: 75%;
+        width: 65%;
         margin: auto;
     }
 
@@ -114,36 +150,55 @@ footer{
         text-align: center;
     }
 
-    /*main > section:nth-child(even){
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }*/
-
     main form{
         text-align: center;
         margin: 2vh auto;
     }
 
+    main p{
+        text-align: center;
+    }
+
     main ul{
+        padding: 0;
         text-align: center;
         list-style-type: none;
     }
 
-    main a{
+    main ul>li>a{
+        font-size: 1.5em;
+    }
+
+    main table>thead{
+        font-size: 1.75em;
+    }
+
+    main table a{
         font-size: 1.5em;
     }
 
     main table{
         height: 45vh;
         width: 25vw;
-        margin: 10% auto;
+        margin: 5% auto;
     }
 
     main thead{
         font-size: 125%;
     }
 
+    main iframe{
+        width: 25vw;
+        height: 30vh;
+        display: block;
+        margin: 5% auto;
+    }
+
     footer{
         text-align: right;
+    }
+
+    footer>p{
+        margin: 0;
     }
 }
