@@ -173,8 +173,12 @@ footer{
         font-size: 1.75em;
     }
 
-    main table a{
+    main table th>a{
         font-size: 1.5em;
+    }
+
+    main td{
+        text-align: center;
     }
 
     main table{
