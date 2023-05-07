@@ -9,49 +9,49 @@
     <body class="center">
         <div class="wrapper">
             <header>
-                    <h1>Formulär</h1>
-                </header>
-                <nav>
-                    <ul>
-                        <li><a href="genrer.html">Musikgenrer</a></li>
-                        <li><a href="index.html">Startsida</a></li>
-                        <li><a href="forms.html">Formulär</a></li>
-                    </ul>
-                </nav>
-                <main>
-                    <form method="get" action="form.html">
-                        <fieldset>
-                            <label for="fnamn">Förnamn:</label>
-                            <input type="text" id="fnamn" name="fnamn" required/>
-                            <br>
-                            <br>
-                            <label for="enamn">Efternamn:</label>
-                            <input type="text" id="enamn" name="enamn" required/>
-                        </fieldset>
+                <h1>Formulär</h1>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="genrer.html">Musikgenrer</a></li>
+                    <li><a href="index.html">Startsida</a></li>
+                    <li><a href="forms.html">Formulär</a></li>
+                </ul>
+            </nav>
+            <main>
+                <form method="get" action="form.html"> <!--Skapar ett formulär där formulärdatan skickas till en url, i detta fall "form.html"-->
+                    <fieldset> <!--Används för att gruppera relaterade element, skapar även en ruta runt sig-->
+                        <label for="fnamn">Förnamn:</label> <!--Text till ett element (i detta fall <input> med id "fnamn")-->
+                        <input type="text" id="fnamn" name="fnamn" required/> <!--Input i form av text, id "fnamn", required = måste svara-->
+                        <br> <!--Radbrytning-->
                         <br>
-                        <fieldset>
-                            <label>Vad tycker du om sidan?</label>
-                            <br>
-                            <input type="radio" name="opinion" value="b" id="b"/>
-                            <label for="b">Bra</label>
-                            <input type="radio" name="opinion" value="o" id="o"/>
-                            <label for="o">Ok</label>
-                            <input type="radio" name="opinion" value="d" id="d"/>
-                            <label for="d">Dålig</label>
-                        </fieldset>
+                        <label for="enamn">Efternamn:</label>
+                        <input type="text" id="enamn" name="enamn" required/>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Åsikt</legend> <!--Text som representerar vad som finns i detta Fieldset-->
+                        <p>Vad tycker du om sidan?</p>
+                        <input type="radio" name="opinion" value="b" id="b"/> <!--type="radio" skapar en knapp i form av en cirkel, endast en kan vara markerad samtidigt-->
+                        <label for="b">Bra</label>
+
+                        <input type="radio" name="opinion" value="o" id="o"/>
+                        <label for="o">Helt ok</label>
+
+                        <input type="radio" name="opinion" value="d" id="d"/>
+                        <label for="d">Dålig</label>
                         <br>
-                        <fieldset>
-                            <label for ="improve">Vad kan förbättras?</label>
-                            <br>
-                            <textarea name="improve" id="improve" cols="25" rows="10"></textarea>
-                        </fieldset>
                         <br>
-                        <input type="submit" value="Skicka"/>
-                    </form>
-                </main>          
-                <footer>
-                    <p>Theo Melander</p>
-                </footer>  
+                        <p>Vad kan förbättras?</p>
+                        <textarea name="improve" cols="25" rows="10"></textarea>
+                    </fieldset>
+                    <br>
+                    <input type="submit" value="Skicka"/> <!--Skapar en "skicka"-knapp, trycker man på knappen kommer man till "form.html"-->
+                </form>
+            </main>          
+            <footer>
+                <p>Theo Melander</p>
+            </footer>  
         </div>          
     </body>
 </html>

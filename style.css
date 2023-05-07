@@ -86,6 +86,14 @@ main img{
     display: none;
 }
 
+textarea{
+    max-width: 35vw;
+}
+
+fieldset p{
+    margin: 0;
+}
+
 footer{
     grid-area: footer;
 }
