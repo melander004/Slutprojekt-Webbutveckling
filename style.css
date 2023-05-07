@@ -1,28 +1,28 @@
-.wrapper{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 50px auto auto 30px;
-    grid-template-areas: 
+.wrapper{ /*CSS till klassen "wrapper"*/
+    display: grid; /*Skapar en grid*/
+    grid-template-columns: 1fr; /*Antal kolumn(er) och storlek på kolumn(er)*/
+    grid-template-rows: 50px auto auto 30px; /*Bestämmer hur många samt hur stora rader*/
+    grid-template-areas: /*Anger områden i griden*/
     "header"
     "nav"
     "main"
     "footer";
 }
 
-header{
+header{ /*Gör så att "header" tillhör gridarean "header"*/
     grid-area: header;
 }
 
-header > h1{
+header > h1{ /*h1 taggen direkt under header har margin 0 (alltså ingen margin)*/
     margin: 0;
 }
 
-nav{
+nav{ /*Nav tillhör gridarean nav samt ändrar bakgrundsfärgen till ljusgrå*/
     grid-area: nav;
     background-color: lightgray;
 }
 
-nav > ul{
+nav > ul{ /*Gör så att den osorterade listan direkt under "nav" har 0 i margin och padding. Skapar en ny grid, rader=auto. Den osorterade listans höjd=100%*/
     margin: 0;
     padding: 0;
     display: grid;
@@ -30,187 +30,173 @@ nav > ul{
     height: 100%;
 }
 
-nav li{
+nav li{ /*Tar bort varje listelements (som ligger i nav) punkter. Liselementets höjd är satt på 100%*/
     list-style-type: none;
     height: 100%;
 }
 
-nav a{
-    display: inline-block;
+nav a{ /*Tar bort textdekoration på hyperlänkarna under nav. Skapar även ett inline-block och sätter höjden och bredden på blocket till 100% (gör så att hela ytan är klickbar)*/
     text-decoration: none;
+    display: inline-block;
     width: 100%;
     height: 100%;
 }
 
-main{
+main{ /*Main tillhör gridarean main. Skapar en grid där rader är satt på auto (det blir så många rader som behövs)*/
     grid-area: main;
     display: grid;
     grid-template-rows: auto;
 }
 
-main ul{
+main ul{ /*Oserterade listor i main har ingen margin eller padding. Punkterna i listan är borttagna.*/
+    margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-main table, th, td{
+main table, th, td{ /*Skapar en ruta runt hela tabellen, tabellrubrikerna och datacellerna som är 1px bred. Kollapsar "bordern" så */
     border: solid black 1px;
     border-collapse: collapse;
 }
 
-main table{
+main table{ /*Gör så att tabellen i main tar upp halva viewportens bredd (eftersom den ligger i en section tar den upp halva sectionen)*/
     width: 50vw;
 }
 
-main table a{
+main table a{ /*Tar bort textdekoration från alla hyperlänkar (<a>) under <table>*/
     text-decoration: none;
 }
 
-main table>thead{
+main table>thead{ /*Ändrat textstorleken på thead direkt under table till 1.25em (1.25 gånger större än fontens standard)*/
     font-size: 1.25em;
 }
 
-tbody>tr:nth-child(odd){
+tbody>tr:nth-child(odd){ /*Varannan rad (varje udda rad) i tabellen (i tabellkroppen) har bakgrundsfärgen ljusblå*/
     background-color: lightblue;
 }
 
-tbody>tr:nth-child(even){
+tbody>tr:nth-child(even){ /*Varje jämn rad kommer ha bakgrundsfärgen rgb(180, 180, 180)*/
     background-color: rgb(180, 180, 180);
 }
 
-thead{
+thead{ /*Tabellhuvudet kommer ha färgen #6868ffcc*/
     background-color: #6868ffcc;
 }
 
-main img{
+main img{ /*Alla bilder (img) i main kommer inte att synas (om sidans bredd är mindre än 800pixlar)*/
     display: none;
 }
 
-textarea{
+textarea{ /*Textareans ruta i formuläret kommer ha en maxbredd på 35vw ( 35% av viewport width)*/
     max-width: 35vw;
 }
 
-fieldset p{
+fieldset p{ /*Alla textstycken (<p>) under fieldset har margin 0*/
     margin: 0;
 }
 
-footer{
+footer{ /*Footer tillhör gridarean footer*/
     grid-area: footer;
 }
 
-@media screen and (min-width: 800px){
-    body{
+@media screen and (min-width: 800px){ /*Används för att kunna ha olika layouts för olika enheter. Om sidans bredd är mer än 800 pixlar så gäller allt nedan*/
+    body{ /*Gör så att höjden på body är 95% av viewport height*/
         height: 95vh;
     }
 
-    .wrapper{
+    .wrapper{ /*Klassen wrapper kommer ha 90% bredd och 95% höjd. margin: 0 auto; gör så att allt hamnar i mitten. Klassen kommer även ha ett bestämt antal rader med storlekarna:50px, 5vh, auto och 30px*/
         width: 90%;
         height: 95%;
         margin: 0 auto;
         grid-template-rows: 50px 5vh auto 30px;
     }
 
-    header > h1{
+    header > h1{ /*Gör så att h1-taggen direkt under header är centrerad*/
         text-align: center;
     }
 
-    nav li a{
-        vertical-align: middle;
-    }
-
-    nav > ul{
+    nav > ul{ /*Den osorterade listan direkt under nav kommer ha tre kolumner, texten kommer centreras samt ingen margin eller padding*/
         grid-template-columns: 1fr 1fr 1fr;
         text-align: center;
         margin: 0;
         padding: 0;
     }
 
-    nav > li{
+    nav li{ /*Ingen margin eller padding till listelementen under nav*/
         margin: 0;
         padding: 0;
     }
 
-    nav a{
+    nav a{ /*Alla hyperlänkar (<a>) under nav får textstorleken 1.5em*/
         font-size: 1.5em;
     }
 
-    .wrapper main{
+    .wrapper main{ /*main till klassen wrapper kommer ha två kolumner. Om de blir "overflow" i main kommer en scrollbar att bli tillagd för att man ska kunna se resten av innehållet.*/
         grid-template-columns: 1fr 1fr;
         overflow: auto;
     }
 
-    .center main{
+    .center main{ /*Klassen center kommer endast ha en kolumn*/
         grid-template-columns: 1fr;
     }
 
-    main.trespalt{
-        display: grid;
+    main.trespalt{ /*Klassen trspalt som tillhör main kommer att ha en grid med tre kolumner*/
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    main img{
+    main img{ /*Bilden visas som ett block och kommer ha 65% bredd. Bilden kommer även att centreras (margin auto) samt ha rundade hörn*/
         display: block;
         width: 65%;
         margin: auto;
+        border-radius: 15%;
     }
 
-    main h2{
+    main h2, td{ /*Alla h2-taggar och dataceller (td) under main kommer centreras*/
         text-align: center;
     }
 
-    main form{
-        text-align: center;
+    main form{ /*form under main kommer centreras, även texten i formuläret kommer att centreras*/
         margin: 2vh auto;
-    }
-
-    main p{
         text-align: center;
     }
 
-    main ul{
+    main ul{ /*Oserterade listor under main kommer varken ha margin eller padding. Texten kommer centreras och punkterna kommer inte att synas*/
+        margin: 0;
         padding: 0;
         text-align: center;
         list-style-type: none;
     }
 
-    main ul>li>a{
+    main ul>li>a{ /*Länkar i main som ligger direkt under "li" som i sin tur ligger direkt under "ul" kommer att ha textstorleken 1.5em*/
         font-size: 1.5em;
     }
 
-    main table>thead{
+    main table>thead{ /*thead direkt under table i main kommer ha textstorleken 1.75em*/
         font-size: 1.75em;
     }
 
-    main table th>a{
+    main table th>a{ /*Alla länkar direkt under tabellhuvuden (th) som ligger under table i main kommer ha textstorlek 1.5em*/
         font-size: 1.5em;
     }
 
-    main td{
-        text-align: center;
-    }
-
-    main table{
+    main table{ /*Tabeller i main kommer ha höjd 45vh (45% av viewport height) och 25vw (25% av viewport width) samt margin 5% auto (5% över och under samt auto till höger och vänster)*/
         height: 45vh;
         width: 25vw;
         margin: 5% auto;
     }
 
-    main thead{
-        font-size: 125%;
-    }
-
-    main iframe{
+    main iframe{ /*iframe i main kommer ha bredd på 25vw, höjd på 30vh och visas som block med margin 5% auto (5% över och under, auto till höger och vänster)*/
         width: 25vw;
         height: 30vh;
         display: block;
         margin: 5% auto;
     }
 
-    footer{
+    footer{ /*Footern kommer att högercentreras*/
         text-align: right;
     }
 
-    footer>p{
+    footer>p{ /*Textstycket direkt under footer kommer att ha margin 0*/
         margin: 0;
     }
 }
