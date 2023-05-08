@@ -192,6 +192,11 @@ footer{ /*Footer tillhör gridarean footer*/
         margin: 5% auto;
     }
 
+    main video{ /*Centrerar video (med 5% margin över och under)*/
+        display: block;
+        margin: 5% auto;
+    }
+
     footer{ /*Footern kommer att högercentreras*/
         text-align: right;
     }
