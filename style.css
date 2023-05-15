@@ -18,6 +18,15 @@
     "footer";
 }
 
+.center .wrapper{
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "footer";
+}
+
 header{ /*Gör så att "header" tillhör gridarean "header"*/
     grid-area: header;
 }
