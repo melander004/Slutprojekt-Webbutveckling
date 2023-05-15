@@ -6,7 +6,7 @@
         <title>Startsida</title> <!--Sidans titel, "flikens" namn-->
         <link href="style.css" rel="stylesheet"> <!--Länkar stylesheetet "style.css" till denna sidan (extern css)-->
     </head>
-    <body> <!--Kroppen, själva innehållet på sidan-->
+    <body id="startsida"> <!--Kroppen, själva innehållet på sidan-->
         <div class="wrapper"> <!--Används för att lättare justera sidan designmässigt (ex om flera sidor ska ha samma design eller olika design för olika enheter)-->
             <header> <!--Sidhuvudet-->
                 <h1>Startsida</h1> <!--Sidans titel-->
@@ -30,28 +30,13 @@
                         Om du vill lyssna på en av låtarna i tabellen kan du trycka på låtens namn, vilket öppnar en youtube-flik med låten.
                     </p>
                 </section>
-                <section> <!--Sektion med en tabell-->
-                    <table class="tcenter"> <!--Tabell med en klass som centrerar tabellen-->
-                        <thead> <!--Tabellhuvudet-->
-                            <tr> <!--Rad i tabellen-->
-                                <th scope="col">Musikgenrer</th> <!--Rubrikcell, rubrik för column-->
-                            </tr>
-                        </thead>
-                         <tbody> <!--Tabellkroppen-->
-                            <tr>
-                                <th><a href="rap.html">Rap</a></th> <!--Rubrikcell med hyperlänk till en musikgenre-->
-                            </tr>
-                            <tr>
-                                <th><a href="pop.html">Pop</a></th>
-                            </tr>
-                            <tr>
-                                <th><a href="rock.html">Rock</a></th>
-                            </tr>
-                            <tr>
-                                <th><a href="soundtrack.html">Soundtrack</a></th>
-                            </tr>
-                        </tbody>
-                    </table>
+                <section> <!--Sektion med en sorterad lista-->
+                    <ol>
+                        <li><a href="soundtrack.html">Soundtrack</a></li>
+                        <li><a href="rap.html">Rap</a></li>
+                        <li><a href="pop.html">Pop</a></li>
+                        <li><a href="rock.html">Rock</a></li>
+                    </ol>
                 </section>
             </main>          
             <footer> <!--Sidofoten-->

@@ -1,8 +1,17 @@
 .wrapper{ /*CSS till klassen "wrapper"*/
     display: grid; /*Skapar en grid*/
-    grid-template-columns: 1fr; /*Antal kolumn(er) och storlek på kolumn(er)*/
+    grid-template-columns: 1fr 4fr; /*Antal kolumn(er) och storlek på kolumn(er)*/
     grid-template-rows: 50px auto auto 30px; /*Bestämmer hur många samt hur stora rader*/
     grid-template-areas: /*Anger områden i griden*/
+    "header header"
+    "nav nav"
+    "lokalmeny main"
+    "footer footer";
+}
+
+#startsida .wrapper{
+    grid-template-columns: 1fr; 
+    grid-template-areas:
     "header"
     "nav"
     "main"
@@ -36,10 +45,41 @@ nav li{ /*Tar bort varje listelements (som ligger i nav) punkter. Liselementets 
 }
 
 nav a{ /*Tar bort textdekoration på hyperlänkarna under nav. Skapar även ett inline-block och sätter höjden och bredden på blocket till 100% (gör så att hela ytan är klickbar)*/
-    text-decoration: none;
     display: inline-block;
     width: 100%;
     height: 100%;
+}
+
+a:link{
+    background-color: crimson;
+    text-decoration: none;
+}
+
+a:visited{
+    background-color: lightgray;
+}
+
+a:focus{
+    border: 1px solid black;
+}
+
+a:hover{
+    background-color: purple;
+}
+
+a:active{
+    font-size: 2rem;
+}
+
+.lokalmeny{
+    grid-area: lokalmeny;
+    background-color: white;
+}
+
+.lokalmeny ul{
+    grid-template-columns: 1fr;
+    text-align: left;
+    height: 25%
 }
 
 main{ /*Main tillhör gridarean main. Skapar en grid där rader är satt på auto (det blir så många rader som behövs)*/
@@ -54,7 +94,11 @@ main ul{ /*Oserterade listor i main har ingen margin eller padding. Punkterna i 
     list-style-type: none;
 }
 
-main table, th, td{ /*Skapar en ruta runt hela tabellen, tabellrubrikerna och datacellerna som är 1px bred. Kollapsar "bordern" så */
+main ol{
+    font-size: 1.25rem;
+}
+
+main table, main th, main td{ /*Skapar en ruta runt hela tabellen, tabellrubrikerna och datacellerna som är 1px bred. Kollapsar "bordern" så */
     border: solid black 1px;
     border-collapse: collapse;
 }
@@ -144,10 +188,14 @@ footer{ /*Footer tillhör gridarean footer*/
         grid-template-columns: 1fr 1fr 1fr;
     }
 
+    main.enspalt{
+        grid-template-columns: 1fr;
+    }
+
     main img{ /*Bilden visas som ett block och kommer ha 65% bredd. Bilden kommer även att centreras (margin auto) samt ha rundade hörn*/
         display: block;
         width: 65%;
-        margin: auto;
+        margin: 5% auto;
         border-radius: 15%;
     }
 
